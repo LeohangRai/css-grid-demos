@@ -1,0 +1,31 @@
+@import url('base.css');
+
+/* 
+  - we are following the mobile first approach 
+  - also, we are specifying the min-width value of '50em' instead of '768px' because it is a relative unit and more flexible
+*/
+
+
+/* 
+  totally optionally, but we will apply the 'display: grid' no matter the screen size 
+  because the 'gap' property makes the space between the items more consistent and elegant
+*/
+.grid-container {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 50em) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+
+  .grid-container-item:last-child {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+}

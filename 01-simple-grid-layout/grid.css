@@ -1,0 +1,16 @@
+@import url('base.css');
+
+.grid-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+.grid-container-item:last-child {
+  grid-column-start: 4;
+  grid-row: 1 / span 2;
+}

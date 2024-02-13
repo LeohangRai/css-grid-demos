@@ -1,0 +1,42 @@
+@import url('base.css');
+
+.grid-container {
+  display: grid;
+  gap: 1rem;
+  /* this will make sure that each column defined in our grid-template-areas will have the same size of 1fr */
+  grid-auto-columns: 1fr;
+}
+
+@media (min-width: 45em) {
+  .grid-container {
+    grid-template-areas:
+      'one one'
+      'two five'
+      'three five'
+      'four five';
+  }
+
+  .grid-container-item:nth-child(1) {
+    grid-area: one;
+  }
+  .grid-container-item:nth-child(2) {
+    grid-area: two;
+  }
+  .grid-container-item:nth-child(3) {
+    grid-area: three;
+  }
+  .grid-container-item:nth-child(4) {
+    grid-area: four;
+  }
+  .grid-container-item:nth-child(5) {
+    grid-area: five;
+  }
+}
+
+@media (min-width: 60em) {
+  .grid-container {
+    grid-template-areas:
+      'one one two five'
+      'three four four five';
+  }
+}
